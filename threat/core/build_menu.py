@@ -1,8 +1,12 @@
+#!/usr/bin/env python
 import os
+import sys
 from core.colors import color
+from collections import OrderedDict
+from core.functions import functions
 
-def exit()
-    print(colors.red('\n [-] Exiting...'))
+def exit():
+    print(color.red(' [-] Exiting...'))
     sys.exit(0)
 
 def buildmenu(target,dict,banner,art):
@@ -11,36 +15,34 @@ def buildmenu(target,dict,banner,art):
     i=1
     print(color.blue('[+] Module Selected : ') + color.yellow(banner))
     print(art)
-    print(color.yellow('\n Choose from the options below :\n'))
+    print(color.yellow(' Choose from the options below:\n'))
     for key, value in dictionary.items():
-        print(color.blue(' ['+str(i)+'] '+ value[0]) + color.white(value[1]))
+        print(color.green(' ['+str(i)+'] ') + color.blue(value[0]) + " - " + color.custom(value[1], white=True))
         i+=1
-    print('\n')
     if 'Main Menu' in banner:
-        print(color.blue(' [0] ') + color.red('Exit\n'))
+        print('\n ' + color.custom('[0] Exit',bold=True,white=True,bg_red=True)+'\n')
     else:
         if not 'Aux' in banner:
-            print(color.blue(' [A] ') + color.orange('Run all\n')
-        print(color.custom(' [99] Back',bold=True,black=True,bg_light_grey=True))
+            print('\n'+color.green(' [A] ') + color.yellow('Run all\n'))
+        print(" " + color.custom('[B] Back',bold=True,white=True,bg_red=True)+'\n')
 
-    input_dirty = raw_input('[#] Choose Option:> ')
-    choice = input_dirty.strip()
+    choice = input('[#] Choose Option:> ')
     found = False
     if choice == '0': # exit
         exit()
-    elif choice == '99': # go back
+    elif choice.lower() == 'b': # go back
         os.system('clear')
-    elif choice == 'A' or 'a':
+    elif choice.lower() == 'a':
         for key, value in dictionary.items():
-            results=all_functions[value[2]](target)
+            results=functions[value[2]](target)
         found = True
     else:
         for key, value in dictionary.items():
             if str(choice) == str(key): # select option
                 if 'Aux' in banner:
-                    results=all_functions[value[2]]
+                    results=functions[value[2]]
                 else:
-                    results=all_functions[value[2]](target)
+                    results=functions[value[2]](target)
                 found = True
                 break
 

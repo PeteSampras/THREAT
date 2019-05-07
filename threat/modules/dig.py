@@ -1,0 +1,2 @@
+def dig()
+  pass

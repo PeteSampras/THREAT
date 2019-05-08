@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import sys
-from core.build_menu import buildmenu
+
+from multiprocessing import Queue
 
 menu = { # '#' : ['module', 'description', 'function']
         '1':['Reconnaissance & OSINT','Description','recon'],\
@@ -10,7 +11,10 @@ menu = { # '#' : ['module', 'description', 'function']
         '5':['Post Analysis','Description','post']\
     }
 
+processes=[]
 target=[]
+tasks_to_accomplish = Queue()
+tasks_that_are_done = Queue()
 
 class Target:
     def __init__(self,name,current_menu,last_menu,main_menu):
@@ -18,6 +22,7 @@ class Target:
         self.current_menu = current_menu
         self.last_menu = last_menu
         self.main_menu = main_menu
+        self.multiprocess = []
 
 def threat():
     while True:
@@ -33,6 +38,7 @@ def threat():
             sys.exit()
 
 if __name__=='__main__':
+    from core.build_menu import buildmenu
     try:
         threat()
     except KeyboardInterrupt:

@@ -18,6 +18,10 @@ functions = {
     #'active_recon':active_recon,
     #'infodisc':infodisc,
 
-    'dig':dig,
+    #'dig':dig,
     #''
+}
+
+multiprocess_functions = { 
+    'dig':dig
 }

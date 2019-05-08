@@ -59,6 +59,8 @@ def buildmenu(target,dict,banner,art):
     else:
         for key, value in dictionary.items():
             if str(choice) == str(key): # select option
+                target[0].module = value[0]
+                target[0].description = value[1]
                 if 'Temp if statement in case dont want to pass target' in banner: # DEBUG: Might use this option
                     results=functions[value[2]]
                 else:

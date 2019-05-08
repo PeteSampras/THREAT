@@ -22,7 +22,9 @@ class Target:
         self.current_menu = current_menu
         self.last_menu = last_menu
         self.main_menu = main_menu
-        self.multiprocess = []
+        self.module=''
+        self.description=''
+        self.ip=''
 
 def threat():
     while True:

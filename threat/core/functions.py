@@ -5,6 +5,7 @@ from modules.exploitation.exploitation import exploitation
 from modules.vulnysis.vulnysis import vulnysis
 from modules.recon.passive_recon import passive_recon
 from modules.recon.dig import dig
+from modules.recon.whois import whois
 
 functions = {
     'recon':recon,
@@ -23,5 +24,6 @@ functions = {
 }
 
 multiprocess_functions = { 
-    'dig':dig
+    'dig':dig,
+    'whois':whois,
 }

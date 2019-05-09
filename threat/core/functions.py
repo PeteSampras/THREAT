@@ -4,16 +4,16 @@ from modules.enumeration.scanenum import scanenum
 from modules.exploitation.exploitation import exploitation
 from modules.vulnysis.vulnysis import vulnysis
 from modules.recon.passive_recon import passive_recon
-from modules.recon.dig import dig
-from modules.recon.whois import whois
-from modules.recon.nping import nping
-from modules.recon.getgeoip import getgeoip
-from modules.recon.iphistory import iphistory
-from modules.recon.revdns import revdns
-from modules.recon.revip import revip
-from modules.recon.subnet import subnet
-from modules.recon.linkedin import linkedin
-from modules.recon.gsearch import gsearch
+from modules.recon.passive.dig import dig
+from modules.recon.passive.whois import whois
+from modules.recon.passive.nping import nping
+from modules.recon.passive.getgeoip import getgeoip
+from modules.recon.passive.iphistory import iphistory
+from modules.recon.passive.revdns import revdns
+from modules.recon.passive.revip import revip
+from modules.recon.passive.subnet import subnet
+from modules.recon.passive.linkedin import linkedin
+from modules.recon.passive.gsearch import gsearch
 
 functions = {
     'recon':recon,

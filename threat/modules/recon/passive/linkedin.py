@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from modules.recon.gsearch import gsearch
+from modules.recon.passive.gsearch import gsearch
 import time
 import requests
 from random import randint

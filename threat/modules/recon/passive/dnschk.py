@@ -14,7 +14,7 @@ import re
 import time
 import os
 import sys
-from core.Core.colors import *
+from core.colors import color
 sys.path.append('files/')
 from lib.dnsdump_mod.DNSDumpsterAPI import *
 

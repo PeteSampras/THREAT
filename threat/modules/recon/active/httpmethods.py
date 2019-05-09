@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+from core.colors import color
+def httpmethods(target):
+    print('This module is not yet available.')
+    pass
 # #!/usr/bin/env python
 # # -*- coding: utf-8 -*-
 

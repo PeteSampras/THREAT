@@ -12,6 +12,11 @@
 # from __future__ import print_function
 # import os
 # import re
+#!/usr/bin/env python
+from core.colors import color
+def dav(target):
+    print('This module is not yet available.')
+    pass
 # import time
 # import urllib2
 # from re import search, I

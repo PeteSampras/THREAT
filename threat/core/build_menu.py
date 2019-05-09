@@ -51,7 +51,15 @@ def buildmenu(target,dict,banner,art):
         buildmenu(target,target[0].last_menu,'','')
     elif choice.lower() == 'a':
         for key, value in dictionary.items():
-            results=functions[value[2]](target)
+            target[0].module = value[0]
+            target[0].description = value[1]
+            build_banner(value[0].replace('(','').replace(')',''))
+            try:
+                multi(multiprocess_functions[value[2]],target)
+            except Exception as e:
+                pass
+            finally:
+                pass
         found = True
     elif choice.lower() == 'm':
         found = True

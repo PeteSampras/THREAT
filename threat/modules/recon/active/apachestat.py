@@ -6,6 +6,11 @@
 # #-:-:-:-:-:-:-:-:-:-:-:-:#
 
 # #Author: @_tID
+#!/usr/bin/env python
+from core.colors import color
+def apachestat(target):
+    print('This module is not yet available.')
+    pass
 # #This module requires TIDoS Framework
 # #https://github.com/0xInfection/TIDoS-Framework
 

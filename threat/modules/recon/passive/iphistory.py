@@ -29,8 +29,6 @@ def iphistory(target):
                 td = tr.findAll('td')
                 info = {'ip' : td[0].text, 'owner' : td[2].text.rstrip(), 'last' : td[3].text}
                 print(color.green(' [+] Instance : ') + color.blue(info['ip']) + color.white(' => ' + info['owner']) + color.blue(' - (' + info['last'] + ')'))
-                #time.sleep(0.02)
-
         except:
             print(color.red(' [-] No instances of IP History found...'))
             pass

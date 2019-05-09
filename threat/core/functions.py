@@ -1,8 +1,15 @@
 #!/usr/bin/env python
+import os
+import sys
+
+sys.path.append(os.path.abspath('.'))
+
+
 from modules.recon.recon import recon
 from modules.enumeration.scanenum import scanenum
 from modules.exploitation.exploitation import exploitation
 from modules.vulnysis.vulnysis import vulnysis
+
 from modules.recon.passive_recon import passive_recon
 from modules.recon.passive.dig import dig
 from modules.recon.passive.whois import whois
@@ -15,6 +22,31 @@ from modules.recon.passive.subnet import subnet
 from modules.recon.passive.linkedin import linkedin
 from modules.recon.passive.gsearch import gsearch
 
+from modules.recon.active_recon import active_recon
+# from modules.recon.active.piwebenum import piwebenum
+# from modules.recon.active.grabhead import grabhead
+# from modules.recon.active.httpmethods import httpmethods
+# from modules.recon.active.robot import robot
+# from modules.recon.active.apachestat import apachestat
+# from modules.recon.active.dav import dav
+# from modules.recon.active.sharedns import sharedns
+# from modules.recon.active.commentssrc import commentssrc
+# from modules.recon.active.sslcert import sslcert
+# from modules.recon.active.filebrute import filebrute
+# from modules.recon.active.traceroute import traceroute
+# from modules.recon.active.phpinfo import phpinfo
+# from modules.recon.active.cms import cms
+# from modules.recon.active.serverdetect import serverdetect
+# from modules.recon.active.altsites import altsites
+
+from modules.recon.infodisc import info_disclosure
+from modules.recon.info.creditcards import creditcards
+from modules.recon.info.emailtext import emailtext
+from modules.recon.info.errors import errors
+from modules.recon.info.internalip import internalip
+from modules.recon.info.phone import phone
+from modules.recon.info.ssn import ssn
+
 functions = {
     'recon':recon,
     'scanenum':scanenum,
@@ -24,14 +56,15 @@ functions = {
 
     # recon related
     'passive_recon':passive_recon,
-    #'active_recon':active_recon,
-    #'infodisc':infodisc,
+    'active_recon':active_recon,
+    'info_disclosure':info_disclosure,
 
     #'dig':dig,
     #''
 }
 
-multiprocess_functions = { 
+multiprocess_functions = {
+    # passive recon
     'dig':dig,
     'whois':whois,
     'nping':nping,
@@ -42,4 +75,13 @@ multiprocess_functions = {
     'subnet':subnet,
     'linkedin':linkedin,
     'gsearch':gsearch,
+
+    # information disclosure
+    
+    'creditcards':creditcards,
+    'emailtext':emailtext,
+    'errors':errors,
+    'internalip':internalip,
+    'phone':phone,
+    'ssn':ssn,
 }

@@ -29,7 +29,7 @@ class Target:
 def threat():
     while True:
         try:
-            host = 'www.example.com'# DEBUG: temp value
+            host = '1.1.1.1'# DEBUG: temp value
             current_menu = menu
             last_menu = menu
             target.append(Target(host,current_menu,last_menu,menu))

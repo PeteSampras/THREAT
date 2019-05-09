@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from multiprocessing import Lock, Process, Queue, current_process
 import time
 import queue # imported for using queue.Empty exception

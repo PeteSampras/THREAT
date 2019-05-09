@@ -15,11 +15,11 @@ def build_banner(banner):
     padding = "".join("=" for i in range(size))
     letters = "| "
     for letter in banner:
-        letters = letters + letter.upper() + " "
-    letters = letters + " |"
-    print(color.red(padding))
-    print(color.red(letters))
-    print(color.red(padding))
+        letters = letters + color.yellow(letter.upper()) + " "
+    letters = letters + color.blue(" |")
+    print(color.blue(padding))
+    print(color.blue(letters))
+    print(color.blue(padding))
 
 def buildmenu(target,dict,banner,art):
     #os.system('clear')

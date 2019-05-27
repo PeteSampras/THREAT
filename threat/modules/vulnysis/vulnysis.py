@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
-def vulnysis(target):
-    from core.build_menu import buildmenu
-    menu = { # '#' : ['module', 'description', 'function']
-        '1':['Basic Bugs & Misconfigurations','(Low Priority [P0x3-P0x4])','xxx'],\
-        '2':['Critical Vulnerabilities','(High Priority [P0x1-P0x2])','xxx'],\
-        '3':['Others','(Bruter Force Tools)','xxx'],\
-    }
-    buildmenu(target,menu,'Vulnerability Analysis','')          # build menu
+def vulnysis(info):
+    from core.build_menu import set_menu
+    menu = [ # '#' : ['module', 'description', 'function']
+        ['Basic Bugs & Misconfigurations','(Low Priority [P0x3-P0x4])','modules.vulnysis.misconfig_bugs','misconfig'],\
+        ['Critical Vulnerabilities','(High Priority [P0x1-P0x2])','modules.vulnysis.critical_bugs','critical'],\
+        ['Others','(Bruter Force Tools)','modules.vulnysis.other_bugs','other'],\
+    ]
+    set_menu(info,menu,'Vulnerability Analysis','')          # build menu

@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      .bg { fill: #0b0f19; }
+      .card { fill: #141a26; stroke: #3b4a6a; stroke-width: 1.5; rx: 8; }
+      .text-main { fill: #e5ecff; font-family: system-ui, sans-serif; font-size: 14px; }
+      .text-small { fill: #a9b4d8; font-family: system-ui, sans-serif; font-size: 12px; }
+      .title { fill: #ffffff; font-family: system-ui, sans-serif; font-size: 22px; font-weight: 600; }
+      .section-title { fill: #f5f7ff; font-family: system-ui, sans-serif; font-size: 18px; font-weight: 500; }
+      .vlan10 { stroke: #ff9f43; stroke-width: 3; }
+      .vlan20 { stroke: #2ecc71; stroke-width: 3; }
+      .vlan30 { stroke: #9b59b6; stroke-width: 3; }
+      .vlan40 { stroke: #e74c3c; stroke-width: 3; }
+      .vlan50 { stroke: #f1c40f; stroke-width: 3; }
+      .infra { fill: #3498db; }
+      .media { fill: #1abc9c; }
+      .security { fill: #e74c3c; }
+      .monitoring { fill: #f39c12; }
+      .database { fill: #9b59b6; }
+      .storage { fill: #2ecc71; }
+      .badge { rx: 4; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" x="0" y="0" width="1600" height="900"/>
+
+  <!-- Title -->
+  <text class="title" x="50" y="60">Homelab Network Topology (Dark SVG)</text>
+
+  <!-- UDR7 Border Router -->
+  <rect class="card" x="650" y="90" width="300" height="80"/>
+  <text class="text-main" x="670" y="120">UDR7 Border Router</text>
+  <text class="text-small" x="670" y="140">Core routing · VLAN gate · IDS feed</text>
+
+  <!-- VLAN lines -->
+  <line class="vlan10" x1="800" y1="170" x2="300" y2="220"/>
+  <line class="vlan20" x1="800" y1="170" x2="800" y2="220"/>
+  <line class="vlan30" x1="800" y1="170" x2="1200" y2="260"/>
+  <line class="vlan40" x1="800" y1="170" x2="1200" y2="340"/>
+  <line class="vlan50" x1="800" y1="170" x2="1200" y2="420"/>
+
+  <!-- VLAN legend -->
+  <rect class="card" x="1180" y="60" width="360" height="180"/>
+  <text class="section-title" x="1200" y="90">VLAN Legend</text>
+  <text class="text-small" x="1200" y="115">VLAN 10 — Management (orange)</text>
+  <text class="text-small" x="1200" y="135">VLAN 20 — Servers (green)</text>
+  <text class="text-small" x="1200" y="155">VLAN 30 — IoT (purple)</text>
+  <text class="text-small" x="1200" y="175">VLAN 40 — Guest (red)</text>
+  <text class="text-small" x="1200" y="195">VLAN 50 — Lab/AI (yellow)</text>
+
+  <!-- MANAGEMENT SECTION -->
+  <text class="section-title" x="80" y="210">VLAN 10 — Management</text>
+
+  <!-- proxmox host -->
+  <rect class="card" x="60" y="230" width="260" height="110"/>
+  <text class="text-main" x="80" y="255">proxmox (Hypervisor)</text>
+  <text class="text-small" x="80" y="275">10 vCPU · 16GB RAM · 192.168.10.200</text>
+  <text class="text-small" x="80" y="295">Services: NUT, PBS, node-exporter, Wazuh agent</text>
+
+  <!-- auth-core -->
+  <rect class="card" x="60" y="350" width="260" height="90"/>
+  <text class="text-main" x="80" y="375">auth-core (LXC)</text>
+  <text class="text-small" x="80" y="395">2 vCPU · 2048MB · 192.168.20.105</text>
+  <text class="text-small" x="80" y="415">Authentik (SSO, OIDC)</text>
+
+  <!-- pihole-main -->
+  <rect class="card" x="60" y="450" width="260" height="100"/>
+  <text class="text-main" x="80" y="475">pihole-main (Priv LXC)</text>
+  <text class="text-small" x="80" y="495">2 vCPU · 2048MB · 192.168.10.254</text>
+  <text class="text-small" x="80" y="515">Pi-hole + Unbound · DNS core</text>
+
+  <!-- AI workstation -->
+  <rect class="card" x="60" y="570" width="260" height="110"/>
+  <text class="text-main" x="80" y="595">AI Workstation (Physical)</text>
+  <text class="text-small" x="80" y="615">24 vCPU · 96GB RAM · 192.168.20.150</text>
+  <text class="text-small" x="80" y="635">Ollama · future Strands agents</text>
+
+  <!-- SERVERS SECTION -->
+  <text class="section-title" x="620" y="210">VLAN 20 — Servers</text>
+
+  <!-- infra-core -->
+  <rect class="card" x="540" y="230" width="260" height="120"/>
+  <text class="text-main" x="560" y="255">infra-core (VM)</text>
+  <text class="text-small" x="560" y="275">2 vCPU · 4096MB · 192.168.20.100</text>
+  <text class="text-small" x="560" y="295">Caddy · Authentik proxy · Dashy · Guacamole</text>
+  <text class="text-small" x="560" y="315">UniFi Controller · Vaultwarden · Portainer · Uptime Kuma · ntfy</text>
+
+  <!-- media-core -->
+  <rect class="card" x="540" y="370" width="260" height="120"/>
+  <text class="text-main" x="560" y="395">media-core (VM)</text>
+  <text class="text-small" x="560" y="415">4 vCPU · 6144MB · 192.168.20.101</text>
+  <text class="text-small" x="560" y="435">Jellyfin · Sonarr · Radarr · Prowlarr · qBittorrent · Gluetun · Tdarr</text>
+
+  <!-- files-core -->
+  <rect class="card" x="540" y="510" width="260" height="120"/>
+  <text class="text-main" x="560" y="535">files-core (VM)</text>
+  <text class="text-small" x="560" y="555">4 vCPU · 6144MB · 192.168.20.103</text>
+  <text class="text-small" x="560" y="575">Nextcloud · Postgres · Immich · Immich ML</text>
+
+  <!-- docs-core -->
+  <rect class="card" x="840" y="230" width="260" height="110"/>
+  <text class="text-main" x="860" y="255">docs-core (LXC)</text>
+  <text class="text-small" x="860" y="275">2 vCPU · 2048MB · 192.168.20.102</text>
+  <text class="text-small" x="860" y="295">Paperless-ngx · Redis · MkDocs</text>
+
+  <!-- monitoring-core -->
+  <rect class="card" x="840" y="360" width="260" height="120"/>
+  <text class="text-main" x="860" y="385">monitoring-core (LXC)</text>
+  <text class="text-small" x="860" y="405">2 vCPU · 2048MB · 192.168.20.104</text>
+  <text class="text-small" x="860" y="425">Prometheus · Grafana · Alertmanager · Loki</text>
+
+  <!-- siem-core -->
+  <rect class="card" x="840" y="500" width="260" height="120"/>
+  <text class="text-main" x="860" y="525">siem-core (VM)</text>
+  <text class="text-small" x="860" y="545">4 vCPU · 8192MB · 192.168.20.105</text>
+  <text class="text-small" x="860" y="565">Wazuh Manager/Indexer/Dashboard · Trino · Iceberg REST catalog · n8n</text>
+
+  <!-- soar-core -->
+  <rect class="card" x="1140" y="230" width="260" height="110"/>
+  <text class="text-main" x="1160" y="255">soar-core (VM)</text>
+  <text class="text-small" x="1160" y="275">4 vCPU · 6144MB · 192.168.20.106</text>
+  <text class="text-small" x="1160" y="295">Shuffle SOAR</text>
+
+  <!-- aev-core -->
+  <rect class="card" x="1140" y="360" width="260" height="130"/>
+  <text class="text-main" x="1160" y="385">aev-core (VM)</text>
+  <text class="text-small" x="1160" y="405">4 vCPU · 8192MB · 192.168.20.107</text>
+  <text class="text-small" x="1160" y="425">OpenAEV · Postgres · Garage (S3) · OpenSearch · RabbitMQ</text>
+
+  <!-- hive-core -->
+  <rect class="card" x="1140" y="510" width="260" height="100"/>
+  <text class="text-main" x="1160" y="535">hive-core (VM)</text>
+  <text class="text-small" x="1160" y="555">4 vCPU · 6144MB · 192.168.20.108</text>
+  <text class="text-small" x="1160" y="575">TheHive5</text>
+
+  <!-- misp-core -->
+  <rect class="card" x="1140" y="630" width="260" height="110"/>
+  <text class="text-main" x="1160" y="655">misp-core (VM)</text>
+  <text class="text-small" x="1160" y="675">2 vCPU · 8192MB · 192.168.20.109</text>
+  <text class="text-small" x="1160" y="695">MISP · MySQL · modules</text>
+
+  <!-- vuln-core -->
+  <rect class="card" x="840" y="640" width="260" height="100"/>
+  <text class="text-main" x="860" y="665">vuln-core (VM)</text>
+  <text class="text-small" x="860" y="685">2 vCPU · 4096MB · 192.168.20.110</text>
+  <text class="text-small" x="860" y="705">Greenbone vulnerability scanning</text>
+
+  <!-- airbyte-core -->
+  <rect class="card" x="540" y="640" width="260" height="110"/>
+  <text class="text-main" x="560" y="665">airbyte-core (VM)</text>
+  <text class="text-small" x="560" y="685">4 vCPU · 8192MB · 192.168.20.112</text>
+  <text class="text-small" x="560" y="705">Threat intel ingestion · feeds FreshRSS</text>
+
+  <!-- QNAP -->
+  <rect class="card" x="1180" y="260" width="260" height="110"/>
+  <text class="text-main" x="1200" y="285">QNAP NAS (Physical)</text>
+  <text class="text-small" x="1200" y="305">4TB RAID1 · PBS sync target</text>
+  <text class="text-small" x="1200" y="325">Syslog → Wazuh · Prometheus exporters</text>
+
+  <!-- Pi-hole Pi -->
+  <rect class="card" x="300" y="260" width="260" height="90"/>
+  <text class="text-main" x="320" y="285">pihole-pi (Physical)</text>
+  <text class="text-small" x="320" y="305">Pi Zero 2 W · 192.168.10.253</text>
+  <text class="text-small" x="320" y="325">Secondary Pi-hole + Unbound · Nebula sync</text>
+</svg>
